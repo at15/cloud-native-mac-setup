@@ -5,13 +5,14 @@ module.exports = {
         repo: 'at15/cloud-native-mac-setup',
         editLinks: true,
         docsDir: 'docs',
-        nav: [
-            {text: 'Guide', link: '/guide/'},
-        ],
+        // nav: [
+        //     {text: 'Guide', link: '/guide/'},
+        // ],
         sidebar: [
             '/',
-            '/guide/',
-            '/foo/',
+            '/get-started.md',
+            '/go.md',
+            '/k8s.md',
         ]
     }
 }
