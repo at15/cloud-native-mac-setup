@@ -3,9 +3,11 @@
 ## TODO
 
 - [ ] basic
-  - [ ] brew
-  - [ ] iterm
-  - [ ] zsh & oh-my-zsh
+  - [x] brew
+  - [x] iterm
+  - [x] zsh & oh-my-zsh
+    - [ ] theme
+  - [ ] global git ignore
 - [ ] go
   - [ ] go
   - [ ] glide & dep
