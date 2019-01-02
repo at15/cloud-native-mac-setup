@@ -51,6 +51,7 @@ And some other common tools
 
 ````bash
 brew install vim # it will also install python3, ruby
+brew install wget
 ````
 
 ### Install Zsh
@@ -98,6 +99,39 @@ you can pick yours based on [screenshots](https://github.com/robbyrussell/oh-my-
 ZSH_THEME="pygmalion"
 ````
 
+### Add .env.sh
+
+This is the biggest takeaway I had from the [original mac setup](https://github.com/sb2nov/mac-setup/pull/40),
+put all my `PATH` and `alias` config in one file `~/.env.sh` and use it for both bash and zsh.
+Remember to add `source ~/.env.sh` in your `~/.bashrc` and `~/.zshrc`
+
+````bash
+# inside ~/.zshrc and ~/.bashrc
+source ~/.env.sh
+````
+
+Following is part of my config.
+
+````bash
+# Add ~/app to path
+export PATH=$HOME/app:$PATH
+
+# Config Git
+export GIT_EDITOR=vim
+
+# Config Go
+export GOROOT=$HOME/app/go
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=$HOME/workspace
+export PATH=$GOPATH/bin:$PATH
+
+# Set common alias
+alias cls='clear'
+
+# Set typo alias
+alias got='git'
+````
+
 ## Git
 
 Run `brew install git` to install latest version of git if you haven't done it previous sections.
@@ -123,6 +157,12 @@ You can add your generated public key to `~/.ssh/authorized_keys` so you can `ss
 ````bash
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh localhost
+````
+
+If you want to [force git to use ssh](https://ricostacruz.com/til/github-always-ssh) even when https url is given
+
+````bash
+git config --global url."git@github.com:".insteadOf "https://github.com/"
 ````
 
 ### Config Git User
@@ -162,7 +202,57 @@ Just go to [settings](https://github.com/settings/keys) and copy and paste, [Git
 cat ~/.ssh/id_rsa.pub | pbcopy
 ````
 
+### Download GitHub Desktop
+
+[GitHub Desktop](https://desktop.github.com/) is the UI built using electron, it works for local repository that is not hosted on public GitHub.
+I mainly used it for viewing diff.
+
+There are other GUIs for git, many people use [Sourcetree](https://www.sourcetreeapp.com/),
+which reminds me of enterprise agile software like Confulence and JIRA so I don't use it.
+
+## Editors
+
+I am not a vim/emacs user, I only use them in git commit message and editing files on servers.
+
+### Jetbrains
+
+Use [toolbox](https://www.jetbrains.com/toolbox/) to download and mange its wide range of IDEs.
+IDEA (the java one) actually can use plugins to support all the languages, but I prefer to use the IDE based on language,
+the subscription fee is not high compared to the productivity it brings.
+
+### Atom
+
+[Atom](https://atom.io/) is created by GitHub as a cross platform editor, it's relatively slow because it is actually running a chrome browser.
+However, it has a wide range of plugins and nice markdown preview, I use it as a document editor.
+
+### VSCode
+
+[Visual Studio Code](https://code.visualstudio.com/) is faster than Atom, although they both use electron.
+
+## Runtimes
+
+I don't know how to call this section, 'virtualization'?
+
+### Docker
+
+You need to [login in order to download it](https://github.com/docker/docker.github.io/issues/6910) it's around 500MB because it's actually running a linux vm with docker inside.
+[Download link](https://hub.docker.com/editions/community/docker-ce-desktop-mac) and [Direct download link without login](https://download.docker.com/mac/stable/Docker.dmg)
+
+### VirtualBox
+
+VirtualBOx is not the best virtual machine software on mac, but since most vagrant config are written for Virtualbox,
+there is no other choices. [Download](https://www.virtualbox.org/wiki/Downloads) the [5.2 version](https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-OSX.dmg) would be a safe bet since many vagrant box have old guest addons.
+
+You need to use installer and enter password since it is installing some extension
+
+### Vagrant
+
+[Vagrant](https://www.vagrantup.com/) allows you to config virtual machine using a config file (actually it's ruby) so you don't need to figure out how to share folder and add host only network.
+[Download](https://www.vagrantup.com/downloads.html) version [2.22](https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.dmg) and the install is same as virtualbox
+
+After install all these, restart, this is the best way to avoid some first time usage issues ...
+
 ## What's next
 
-Now you already have shell environment setup, you are ready to [Go](go).
+Now you already have terminal environment, editors and runtime, you are ready to [Go](go).
 I central my workspace using `GOPATH` regardless of language I am using and the fact that `GOPATH` is no longer mandatory after `go mod`.
