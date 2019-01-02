@@ -6,23 +6,23 @@
   - [x] brew
   - [x] iterm
   - [x] zsh & oh-my-zsh
-    - [ ] theme
-  - [ ] global git ignore
+    - [x] theme
+  - [x] global git ignore
 - [ ] go
-  - [ ] go
-  - [ ] glide & dep
+  - [x] go
+  - [x] glide & dep
   - [ ] go mod (a shell script to enable go mod)
   - [ ] vim-go
 - [ ] node
   - [ ] tldr
   - [ ] yarn, vue cli (so you can contribute to this doc)
 - [ ] editors
-  - [ ] jetbrains (just use toolbox)
+  - [x] jetbrains (just use toolbox)
   - [ ] vim
-- [ ] runtime
-  - [ ] docker for mac
-  - [ ] virtualbox
-  - [ ] vagrant
+- [x] runtime
+  - [x] docker for mac
+  - [x] virtualbox
+  - [x] vagrant
 - [ ] k8s
   - [ ] kubectl
   - [ ] minikube

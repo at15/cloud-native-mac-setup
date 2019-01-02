@@ -254,5 +254,5 @@ After install all these, restart, this is the best way to avoid some first time 
 
 ## What's next
 
-Now you already have terminal environment, editors and runtime, you are ready to [Go](go).
+Now you already have terminal environment, editors and runtime, you are ready to [Go](go.md).
 I central my workspace using `GOPATH` regardless of language I am using and the fact that `GOPATH` is no longer mandatory after `go mod`.

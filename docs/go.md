@@ -4,7 +4,7 @@
 
 I prefer install using tarball under home `~/app` over using installer or brew.
 
-First go to https://golang.org/dl/ and find the latest version
+First go to [https://golang.org/dl/](https://golang.org/dl/) and find the latest version
 
 ````bash
 cd ~/Downloads
